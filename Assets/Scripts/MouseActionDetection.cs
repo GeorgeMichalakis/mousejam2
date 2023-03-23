@@ -6,12 +6,7 @@ public class MouseActionDetection : MonoBehaviour
 {
     void OnMouseOver()
     {
-        //If your mouse hovers over the GameObject with the script attached, output this message
-        Debug.Log("Mouse is over GameObject.");
-    }
-    void Update()
-    {
         if (Input.GetMouseButtonDown(0))
-            OnMouseOver();
+            Debug.Log("clicked");
     }
 }
