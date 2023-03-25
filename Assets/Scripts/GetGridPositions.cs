@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class GetGridPositions : MonoBehaviour
 {
-    private Vector3[] positions;
-    void Start()
+    public Vector2[] GetPositions()
     {
-        int length = gameObject.transform.parent.childCount;
-        positions = new Vector3[length];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        int length = gameObject.transform.childCount;
+        Vector2[] positions = new Vector2[length];
+        for (int _ = 0; _ < length; _++)
+        {
+            Vector3 pos = gameObject.transform.GetChild(_).transform.localPosition;
+            positions[_] = new Vector2(pos.x,pos.y);
+        }
+        return positions;
     }
 }
