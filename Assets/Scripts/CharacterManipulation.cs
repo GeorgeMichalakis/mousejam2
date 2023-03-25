@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class CharacterManipulation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int EnableGameCharacters(int[] indexToEnable)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int _ = 0; _ < indexToEnable.Length; _++)
+        {
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.SetActive(true);
+        }
+        return 0;
     }
 }

@@ -16437,8 +16437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2316926352273264383b72d59b308918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredNumberOfCharacters: 5
+  desiredNumberOfCharacters: 35
   getGridPositionScript: {fileID: 327562374}
+  characterManipulationScript: {fileID: 0}
 --- !u!1 &585380952
 GameObject:
   m_ObjectHideFlags: 0
