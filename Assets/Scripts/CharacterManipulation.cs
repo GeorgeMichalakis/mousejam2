@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterManipulation : MonoBehaviour
 {
     [SerializeField]
+    Material whiteMaterial;
+    [SerializeField]
     Material hiddenMaterial;
     public int EnableGameCharacters(int[] indexToEnable)
     {
@@ -30,6 +32,39 @@ public class CharacterManipulation : MonoBehaviour
                 {
                     gameObject.transform.GetChild(indexToEnable[_]).GetChild(__).GetComponent<SpriteRenderer>().material = hiddenMaterial;
                 }
+            }
+        }
+        return 0;
+    }
+    public int AssignCollidersToDetectClick(int[] indexToEnable)
+    {
+        Vector2 offset = new Vector2(0f, 0.7f);
+        Vector2 size = new Vector2(1.75f, 2f);
+        for (int _ = 0; _ < indexToEnable.Length; _++)
+        {
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.AddComponent<BoxCollider2D>();
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.GetComponent<BoxCollider2D>().offset = offset;
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.GetComponent<BoxCollider2D>().size = size;
+        }
+        return 0;
+    }
+    public int AssignMouseDetectorScript(int[] indexToEnable)
+    {
+
+        for (int _ = 0; _ < indexToEnable.Length; _++)
+        {
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.AddComponent<MouseDetector>();
+        }
+        return 0;
+    }
+    public int PaintCharacterNormal(GameObject character)
+    {
+        int amountOfChildren = character.transform.childCount;
+        for (int _ = 0; _ < amountOfChildren; _++)
+        {
+            if (character.transform.GetChild(_).GetComponent<SpriteRenderer>() != null)
+            {
+                character.transform.GetChild(_).GetComponent<SpriteRenderer>().material = whiteMaterial;
             }
         }
         return 0;

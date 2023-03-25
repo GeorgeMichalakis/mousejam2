@@ -15,6 +15,8 @@ public class MainGame : MonoBehaviour
         int[] indexesOfCharacters = ReturnCharacterIndexes(getGridPositionScript.GetPositions().Length, desiredNumberOfCharacters);
         characterManipulationScript.EnableGameCharacters(indexesOfCharacters);
         characterManipulationScript.PaintAllCharactersBlack(indexesOfCharacters);
+        characterManipulationScript.AssignCollidersToDetectClick(indexesOfCharacters);
+        characterManipulationScript.AssignMouseDetectorScript(indexesOfCharacters);
     }
     private int[] ReturnCharacterIndexes(int maxNumberofCharacters, int desiredNumberOfCharacters)
     {
