@@ -5,6 +5,8 @@ using UnityEngine;
 public class MainGame : MonoBehaviour
 {
     [SerializeField]
+    int numberOfReplicas = 5;
+    [SerializeField]
     int desiredNumberOfCharacters = 5;
     [SerializeField]
     GetGridPositions getGridPositionScript;
@@ -13,6 +15,7 @@ public class MainGame : MonoBehaviour
     private void Start()
     {
         int[] indexesOfCharacters = ReturnCharacterIndexes(getGridPositionScript.GetPositions().Length, desiredNumberOfCharacters);
+        characterManipulationScript.ChooseTheCorrectCharacter(indexesOfCharacters.Length, numberOfReplicas);
         characterManipulationScript.EnableGameCharacters(indexesOfCharacters);
         characterManipulationScript.PaintAllCharactersBlack(indexesOfCharacters);
         characterManipulationScript.AssignCollidersToDetectClick(indexesOfCharacters);

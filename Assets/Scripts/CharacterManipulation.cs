@@ -8,6 +8,11 @@ public class CharacterManipulation : MonoBehaviour
     Material whiteMaterial;
     [SerializeField]
     Material hiddenMaterial;
+    public int ChooseTheCorrectCharacter(int indexes, int numberOfReplicas)
+    {
+
+        return 0;
+    }
     public int EnableGameCharacters(int[] indexToEnable)
     {
         for (int _ = 0; _ < indexToEnable.Length; _++)
@@ -16,7 +21,6 @@ public class CharacterManipulation : MonoBehaviour
         }
         return 0;
     }
-
     public int PaintAllCharactersBlack(int[] indexToEnable)
     {
         for (int _ = 0; _ < indexToEnable.Length; _++)

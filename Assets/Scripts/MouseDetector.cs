@@ -9,7 +9,9 @@ public class MouseDetector : MonoBehaviour
     {
        if(Input.GetMouseButtonDown(0))
         {
+            
             characterManipulationScript.PaintCharacterNormal(gameObject);
+            gameObject.GetComponent<MouseDetector>().enabled = false;
         }
     }
 }
