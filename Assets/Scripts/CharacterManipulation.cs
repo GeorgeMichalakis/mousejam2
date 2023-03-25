@@ -54,12 +54,18 @@ public class CharacterManipulation : MonoBehaviour
         for (int _ = 0; _ < indexToEnable.Length; _++)
         {
             gameObject.transform.GetChild(indexToEnable[_]).gameObject.AddComponent<MouseDetector>();
+            gameObject.transform.GetChild(indexToEnable[_]).gameObject.
+                GetComponent<MouseDetector>().characterManipulationScript=gameObject.GetComponent<CharacterManipulation>();
         }
         return 0;
     }
     public int PaintCharacterNormal(GameObject character)
     {
         int amountOfChildren = character.transform.childCount;
+        if (character.GetComponent<SpriteRenderer>() != null)
+        {
+            character.GetComponent<SpriteRenderer>().material = whiteMaterial;
+        }
         for (int _ = 0; _ < amountOfChildren; _++)
         {
             if (character.transform.GetChild(_).GetComponent<SpriteRenderer>() != null)

@@ -14915,6 +14915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba41f9322d88404f942f458f6b5079a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whiteMaterial: {fileID: 2100000, guid: c750f5a84e6b34443be14f292ed1b3da, type: 2}
   hiddenMaterial: {fileID: 2100000, guid: ba994f4ff7f7e37438913ea9ee74ab40, type: 2}
 --- !u!1 &337863938
 GameObject:
@@ -18556,7 +18557,6 @@ GameObject:
   - component: {fileID: 898021306}
   - component: {fileID: 898021305}
   - component: {fileID: 898021309}
-  - component: {fileID: 898021310}
   m_Layer: 0
   m_Name: idle_down
   m_TagString: Untagged
@@ -18678,18 +18678,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 2}
   m_EdgeRadius: 0
---- !u!114 &898021310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898021304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd2a0c1847fb71f45af2cf77348e2941, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &916410235
 GameObject:
   m_ObjectHideFlags: 0
